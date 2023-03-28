@@ -1,9 +1,11 @@
 {
   "posts": [
+ 
     {
-      "title": "안녕하세요~",
-      "body": "^^",
-      "id": 1
+      "title": "react",
+      "body": "rrrreeaact",
+      "createdAt": 1679990701084,
+      "id": 5
     }
   ]
 }
