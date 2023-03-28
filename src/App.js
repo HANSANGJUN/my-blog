@@ -15,7 +15,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/blogs" element={<ListPage />} />
           <Route path="/blogs/create" element={<CreatePage />} />
-          <Route path="/blogs/edit" element={<EditPage />} />
+          <Route path="/blogs/:id/edit" element={<EditPage />} />
           <Route path="/blogs/:id" element={<ShowPage />} />
         </Routes>
       </div>

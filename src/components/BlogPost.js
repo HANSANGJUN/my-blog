@@ -15,6 +15,10 @@ export default function BlogPost() {
     });
     navigate("/blogs");
   };
+
+  const cancel = () => {
+    navigate("/blogs");
+  };
   return (
     <div>
       <div className="mb-3">
@@ -40,7 +44,10 @@ export default function BlogPost() {
       </div>
 
       <button className="btn btn-primary" onClick={onSubmit}>
-        Post
+        등록
+      </button>
+      <button className="btn btn-danger ms-2" onClick={cancel}>
+        취소
       </button>
     </div>
   );

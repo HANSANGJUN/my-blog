@@ -1,11 +1,3 @@
 {
-  "posts": [
- 
-    {
-      "title": "react",
-      "body": "rrrreeaact",
-      "createdAt": 1679990701084,
-      "id": 5
-    }
-  ]
+  "posts": []
 }

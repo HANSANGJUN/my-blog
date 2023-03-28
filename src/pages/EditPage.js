@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import EditPost from "../components/EditPost";
 
 export default function EditPage() {
   return (
-    <div>EditPage</div>
-  )
+    <div>
+      <EditPost />
+    </div>
+  );
 }
