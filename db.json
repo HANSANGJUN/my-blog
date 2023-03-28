@@ -1,19 +1,9 @@
 {
   "posts": [
     {
-      "title": "테스트 post",
-      "body": "테스트 body",
+      "title": "안녕하세요~",
+      "body": "^^",
       "id": 1
-    },
-    {
-      "title": "테스트 post2",
-      "body": "테스트 body2",
-      "id": 2
-    },
-    {
-      "title": "aa",
-      "body": "aa",
-      "id": 3
     }
   ]
 }
