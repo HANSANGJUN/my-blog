@@ -3,17 +3,37 @@ import axios from "axios";
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
+import PageNation from "../components/PageNation";
 
 export default function ListPage() {
   const [listData, setListData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [numberOfPost, setNumberOfPost] = useState(0);
+  const [numberOfPages, setNumberOfPages] = useState(0);
 
-  const getPosts = () => {
-    axios.get("http://localhost:3001/posts").then((res) => {
-      setListData(res.data);
-      setLoading(false);
-    });
+  useEffect(() => {
+    setNumberOfPages(Math.ceil(numberOfPost / 5));
+  }, [numberOfPost]);
+
+  const getPosts = (page = 1) => {
+    setCurrentPage(page);
+    axios
+      .get(`http://localhost:3001/posts`, {
+        params: {
+          _page: page,
+          _limit: 5,
+          _sort: "id",
+          _order: "desc",
+        },
+      })
+      .then((res) => {
+        setNumberOfPost(res.headers["x-total-count"]);
+        setListData(res.data);
+        setLoading(false);
+      });
   };
+
   useEffect(() => {
     getPosts();
   }, []);
@@ -46,6 +66,11 @@ export default function ListPage() {
       ) : (
         <div>컨텐츠가 없습니다</div>
       )}
+      <PageNation
+        currentPage={currentPage}
+        numberOfPages={numberOfPages}
+        onClick={getPosts}
+      />
     </div>
   );
 }

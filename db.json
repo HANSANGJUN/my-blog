@@ -1,3 +1,53 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "title": "안녕하신가요",
+      "body": "ㅎㅎ",
+      "createdAt": 1680068704490,
+      "publish": true,
+      "id": 1
+    },
+    {
+      "title": "ㅁㄴㅇ",
+      "body": "ㅁㄴㅇ",
+      "createdAt": 1680068722034,
+      "publish": false,
+      "id": 2
+    },
+    {
+      "title": "asd",
+      "body": "asd",
+      "createdAt": 1680069102655,
+      "publish": true,
+      "id": 3
+    },
+    {
+      "title": "테스트4",
+      "body": "4",
+      "createdAt": 1680369335796,
+      "publish": false,
+      "id": 4
+    },
+    {
+      "title": "테스트5",
+      "body": "5",
+      "createdAt": 1680369341763,
+      "publish": false,
+      "id": 5
+    },
+    {
+      "title": "테스트6",
+      "body": "6",
+      "createdAt": 1680369347856,
+      "publish": false,
+      "id": 6
+    },
+    {
+      "title": "gdgd",
+      "body": "gdgd",
+      "createdAt": 1680439901462,
+      "publish": false,
+      "id": 7
+    }
+  ]
 }

@@ -7,6 +7,7 @@ export default function EditPost() {
   const [body, setBody] = useState("");
   const [checkTitle, setCheckTitle] = useState("");
   const [checkBody, setCheckBody] = useState("");
+  const [publish, setPublish] = useState(false);
 
   const [disable, setDisable] = useState(true);
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ export default function EditPost() {
       setBody(res.data.body);
       setCheckTitle(res.data.title);
       setCheckBody(res.data.body);
+      setPublish(res.data.publish);
     });
   };
 
@@ -25,6 +27,7 @@ export default function EditPost() {
     axios.patch(`http://localhost:3001/posts/${id}`, {
       title: title,
       body: body,
+      publish: publish,
     });
     navigate("/blogs");
   };
@@ -36,6 +39,10 @@ export default function EditPost() {
   useEffect(() => {
     getEditPost();
   }, []);
+
+  const onChangePublish = (e) => {
+    setPublish(e.target.checked);
+  };
 
   return (
     <div>
@@ -59,6 +66,15 @@ export default function EditPost() {
           }}
           rows="15"
         />
+      </div>
+      <div className="form-check mb-3">
+        <input
+          className="form-check-input"
+          type="checkbox"
+          checked={publish}
+          onChange={onChangePublish}
+        />
+        <label className="form-check-label">비밀글</label>
       </div>
 
       <button className="btn btn-primary" onClick={onSubmit}>
